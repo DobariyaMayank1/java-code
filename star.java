@@ -2,7 +2,9 @@ import java.util.*;
 public class star {
 
     public static void main(String[] args) {
-        int n =4;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number to print the line of star :");
+        int n = sc.nextInt();
         star (n);
     }
 
