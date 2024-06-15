@@ -3,12 +3,30 @@ import java.util.*;
 public class recursion {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter the number that you want to print in decreasing order");
+        System.out.print("enter the any random integer number : ");
         int n = sc.nextInt();
+        System.out.print("increasing order :");
+        inc(n);
+        System.out.println();
+        System.out.print("decreasing order :");
         dec(n);
         System.out.println();
-        inc(n);
+        System.out.println("factorial of number "+ n + " = "+ factorial(n));
+       
 
+    }
+
+    public static int factorial(int n) {
+        int fact = 1;
+        if (n == 1) {
+
+            fact = 1;
+            return fact;
+        }
+
+        fact = factorial(n - 1) * n;
+
+        return fact;
     }
 
     public static void inc(int n) {
@@ -17,7 +35,7 @@ public class recursion {
             return;
         }
 
-        inc(n-1);
+        inc(n - 1);
         System.out.print(n + " ");
     }
 
