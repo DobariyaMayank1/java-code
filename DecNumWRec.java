@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class DecNumWRec {
     public static void main(String[] args) {
-        int n = 19;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the number that you want to print in decreasing order");
+        int n = sc.nextInt();
         dec(n);
 
 
