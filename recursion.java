@@ -11,8 +11,7 @@ public class recursion {
         System.out.print("decreasing order :");
         dec(n);
         System.out.println();
-        System.out.println("factorial of number "+ n + " = "+ factorial(n));
-       
+        System.out.println("factorial of number " + n + " = " + factorial(n));
 
     }
 
