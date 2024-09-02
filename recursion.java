@@ -17,12 +17,50 @@ public class recursion {
         int arr [] = {1,2,5,3,5,4};
         // System.out.println(issorted(arr, n));
 
-        int key = 5;
-        System.out.println(firstOccurence(arr, key, 0));
-        System.out.println(lastOccurence(arr, key, arr.length-1));
+        // int key = 5;
+        // System.out.println(firstOccurence(arr, key, 0));
+        // System.out.println(lastOccurence(arr, key, arr.length-1));
+        // System.out.println( tilingproblem(1));
+        // String str ="helloworld"; 
+        // removeduplicates(str, 0, new StringBuilder(""), new boolean [26]);
+        System.out.println(friendpairingproblem(6));
+    }
+    
+    public static int friendpairingproblem (int n ){
+
+        if(n ==1 || n==2 ){
+            return n;
+        }
+        return friendpairingproblem(n-1)+friendpairingproblem(n-2)*(n-1);
+
+    }
+    public static void removeduplicates(String str,int idx,StringBuilder newstr, boolean map[]){
+        // input in main function 
+        // removeduplicates(str, 0, new StringBuilder(""), new boolean [26]);
+        if (idx == str.length()) {
+            System.out.println(newstr);
+            return ;
+        }
+
+        char currchar = str.charAt(idx);
+        if(map[currchar-'a']== true){
+            removeduplicates(str, idx+1, newstr, map);
+        }else{
+            map[currchar-'a']= true;
+            removeduplicates(str, idx+1, newstr.append(currchar), map);
+        }
+
     }
 
 
+    public static int tilingproblem (int n ){
+
+        if(n ==1 || n==0 ){
+            return 1;
+        }
+        return tilingproblem(n-1)+tilingproblem(n-2);
+
+    }
 
     public static int lastOccurence(int arr[], int key , int i ){
         if (arr.length == 0){
